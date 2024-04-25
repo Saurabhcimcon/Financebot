@@ -48,6 +48,8 @@ def finance_highlighter():
             # Function to highlight rows with keys_cr_and_dr in yellow
             def highlight_cr_and_dr(row):
                 return ['background-color: yellow' if row["Party's Name"] in keys_cr_and_dr else '' for _ in row]
+            df['Pending'] = df['Pending'].astype(str).apply(lambda x: f"+{x.replace(' Cr', '')}" if "Cr" in x else x)
+            df['Pending'] = df['Pending'].astype(str).apply(lambda x: f"-{x.replace(' Dr', '')}" if "Dr" in x else x)
 
             # Apply highlight function to DataFrame
             styled_df = df.style.apply(highlight_cr_and_dr, axis=1)
