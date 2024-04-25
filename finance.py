@@ -73,7 +73,7 @@ def send_email(receiver_email, styled_df):
     smtp_server = 'smtp.office365.com'
     port = 587  # For starttls
     sender_email = 'billing@cimconautomation.com'  # Enter your email address
-    password = 'cimcon@1987'  # Enter your email password
+    password = 'Boq61126'  # Enter your email password
 
     # Create EmailMessage object
     msg = EmailMessage()
